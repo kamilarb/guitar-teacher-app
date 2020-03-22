@@ -1,15 +1,42 @@
+<div class="row">
+<div class="form">
+  <form (ngSubmit)="changeScale()">
+    <div class="row">
+      <div class="col">
+        <label for="name">Pick your scale:</label>
+        <select id="name" class="mr-2" name="name" [(ngModel)]="pickedScale.name">
+          <option *ngFor="let name of notes" [value]="name">{{name}} </option>
+        </select> 
+        <select id="type" class="mr-2" name="type" [(ngModel)]="pickedScale.type">
+          <option value="maj">major</option>
+          <option value="min">minor</option>
+        </select>
+         <button type="submit">Change</button> </div>
+    
+       </div>
+<div class="row">
+    <div class="scale">
+      <p>Your scale - {{ pickedScale.name }} {{ pickedScale.type }}</p>
 
-
-<div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-    <label class="form-check-label" for="inlineRadio1">1</label>
-  </div>
-
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-    <label class="form-check-label" for="inlineRadio1">1</label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-    <label class="form-check-label" for="inlineRadio1">1</label>
-  </div>
+      <table class="paleBlueRows">
+        <thead>
+          <tr>
+            <th>note</th>
+            <th *ngFor='let note of pickedScale.notes'>{{ note }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>position</td>
+            <td>I</td>
+            <td>II</td>
+            <td>III</td>
+            <td>IV</td>
+            <td>V</td>
+            <td>VI</td>
+            <td>VII</td>
+            <td>VIII</td>
+          </tr>
+        </tbody>
+      </table></div>
+    </div>

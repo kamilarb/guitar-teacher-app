@@ -1,15 +1,53 @@
 import { Component, OnInit } from '@angular/core';
+import { NotesService } from '../notes.service';
 
 @Component({
-  selector: 'app-guitar',
+  selector: 'guitar',
   templateUrl: './guitar.component.html',
   styleUrls: ['./guitar.component.css']
 })
 export class GuitarComponent implements OnInit {
 
-  constructor() { }
+notes = this.data.notes;
+
+  tunning = {
+      1: "E",
+      2: "B",
+      3: "G",
+      4: "D",
+      5: "A",
+      6: "E"
+  };
+
+  strings = {
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: []
+  }
+
+  changeTunning(){
+
+    for (let string in this.tunning) {
+
+      // debugger
+
+      let index = this.data.doubleNotes.indexOf(this.tunning[string]);
+
+      this.strings[string] = this.data.doubleNotes.slice(index+1, index+13);
+
+    }
+
+    
+  }
+
+  constructor(private data:NotesService) {
+    this.changeTunning() }
 
   ngOnInit(): void {
+    
   }
 
 }

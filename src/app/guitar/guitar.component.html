@@ -1,1 +1,65 @@
-<p>guitar works!</p>
+<div class="title">Standard tunning</div>
+<form (ngSubmit)="changeTunning()">
+<table class="minimalistBlack guitar">
+    <thead>
+    <tr>
+    <th>string/fret</th>
+    <th>I </th>
+    <th>II </th>
+    <th>III </th>
+    <th>IV </th>
+    <th>V </th>
+    <th>VI </th>
+    <th>VII </th>
+    <th>VIII </th>
+    <th>IX </th>
+    <th>X </th>
+    <th>XI </th>
+    <th>XII </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>
+        <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[1]">
+            <option *ngFor="let note of notes" [value]="note">{{note}} </option>
+          </select> 
+        </td>
+    <td *ngFor="let note of strings[1]">{{note}}</td>
+    </tr>
+    <tr>
+    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[2]">
+        <option *ngFor="let note of notes" [value]="note">{{note}} </option>
+      </select> </td>
+    <td *ngFor="let note of strings[2]">{{note}}</td>
+    </tr>
+    <tr>
+    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[3]">
+        <option *ngFor="let note of notes" [value]="note">{{note}} </option>
+      </select> </td>
+    <td *ngFor="let note of strings[3]">{{note}}</td>
+    </tr>
+    <tr>
+    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[4]">
+        <option *ngFor="let note of notes" [value]="note">{{note}} </option>
+      </select> </td>
+    <td *ngFor="let note of strings[4]">{{note}}</td>
+    </tr>
+    <tr>
+    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[5]">
+        <option *ngFor="let note of notes" [value]="note">{{note}} </option>
+      </select> </td>
+    <td *ngFor="let note of strings[5]">{{note}}</td>
+    </tr>
+    <tr>
+    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[6]">
+        <option *ngFor="let note of notes" [value]="note">{{note}} </option>
+      </select> </td>
+    <td *ngFor="let note of strings[6]">{{note}}</td>
+    </tr>
+    <tr>
+        <td><button type="submit"> change </button></td>
+    </tr>
+    </tbody>
+    </table>
+    </form>
