@@ -14,8 +14,8 @@ export class ScalesComponent implements OnInit {
   dnotes = this.data.doubleNotes;
 
   pickedScale = {
-    type: "",
-    name: "",
+    type: "maj",
+    name: "C",
     notes: ["C", "D", "E", "F", "G", "A", "B", "C"]
   };
 

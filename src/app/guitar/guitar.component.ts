@@ -32,22 +32,29 @@ notes = this.data.notes;
 
     for (let string in this.tunning) {
 
-      // debugger
-
       let index = this.data.doubleNotes.indexOf(this.tunning[string]);
 
       this.strings[string] = this.data.doubleNotes.slice(index+1, index+13);
 
     }
+  }
 
-    
+  standardTunning() {
+    this.tunning = {
+      1: "E",
+      2: "B",
+      3: "G",
+      4: "D",
+      5: "A",
+      6: "E"
+  };
   }
 
   constructor(private data:NotesService) {
-    this.changeTunning() }
+    }
 
   ngOnInit(): void {
-    
+    this.changeTunning() 
   }
 
 }

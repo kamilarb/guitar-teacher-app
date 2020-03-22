@@ -1,42 +1,41 @@
 <div class="row">
-<div class="form">
-  <form (ngSubmit)="changeScale()">
-    <div class="row">
-      <div class="col">
+  <div class="col">
+    <div class="form">
+      <form (ngSubmit)="changeScale()">
         <label for="name">Pick your scale:</label>
         <select id="name" class="mr-2" name="name" [(ngModel)]="pickedScale.name">
           <option *ngFor="let name of notes" [value]="name">{{name}} </option>
-        </select> 
+        </select>
         <select id="type" class="mr-2" name="type" [(ngModel)]="pickedScale.type">
           <option value="maj">major</option>
           <option value="min">minor</option>
         </select>
-         <button type="submit">Change</button> </div>
-    
-       </div>
+        <button class="btn btn-light" type="submit">Change</button>
+  </form>
+</div></div></div>
 <div class="row">
-    <div class="scale">
-      <p>Your scale - {{ pickedScale.name }} {{ pickedScale.type }}</p>
-
-      <table class="paleBlueRows">
-        <thead>
-          <tr>
-            <th>note</th>
-            <th *ngFor='let note of pickedScale.notes'>{{ note }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>position</td>
-            <td>I</td>
-            <td>II</td>
-            <td>III</td>
-            <td>IV</td>
-            <td>V</td>
-            <td>VI</td>
-            <td>VII</td>
-            <td>VIII</td>
-          </tr>
-        </tbody>
-      </table></div>
-    </div>
+  <div class="col">
+     <p>Your scale - {{ pickedScale.name }} {{ pickedScale.type }}</p>
+    <table class="paleBlueRows">
+      <thead>
+        <tr>
+          <th>note</th>
+          <th *ngFor='let note of pickedScale.notes'>{{ note }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>position</td>
+          <td>I</td>
+          <td>II</td>
+          <td>III</td>
+          <td>IV</td>
+          <td>V</td>
+          <td>VI</td>
+          <td>VII</td>
+          <td>VIII</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -21,45 +21,46 @@
     <tbody>
     <tr>
     <td>
-        <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[1]">
+        <select id="1" class="mr-2" name="1" [(ngModel)]="tunning[1]">
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select> 
         </td>
     <td *ngFor="let note of strings[1]">{{note}}</td>
     </tr>
     <tr>
-    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[2]">
+    <td> <select id="1" class="mr-2" name="2" [(ngModel)]="tunning[2]">
         <option *ngFor="let note of notes" [value]="note">{{note}} </option>
       </select> </td>
     <td *ngFor="let note of strings[2]">{{note}}</td>
     </tr>
     <tr>
-    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[3]">
+    <td> <select id="1" class="mr-2" name="3" [(ngModel)]="tunning[3]">
         <option *ngFor="let note of notes" [value]="note">{{note}} </option>
       </select> </td>
     <td *ngFor="let note of strings[3]">{{note}}</td>
     </tr>
     <tr>
-    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[4]">
+    <td> <select id="1" class="mr-2" name="4" [(ngModel)]="tunning[4]">
         <option *ngFor="let note of notes" [value]="note">{{note}} </option>
       </select> </td>
     <td *ngFor="let note of strings[4]">{{note}}</td>
     </tr>
     <tr>
-    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[5]">
+    <td> <select id="1" class="mr-2" name="5" [(ngModel)]="tunning[5]">
         <option *ngFor="let note of notes" [value]="note">{{note}} </option>
       </select> </td>
     <td *ngFor="let note of strings[5]">{{note}}</td>
     </tr>
     <tr>
-    <td> <select id="1" class="mr-2" name="note" [(ngModel)]="tunning[6]">
+    <td> <select id="1" class="mr-2" name="6" [(ngModel)]="tunning[6]">
         <option *ngFor="let note of notes" [value]="note">{{note}} </option>
       </select> </td>
     <td *ngFor="let note of strings[6]">{{note}}</td>
     </tr>
     <tr>
-        <td><button type="submit"> change </button></td>
+        <td><button class="btn btn-light"  type="submit"> change tunning </button> </td>
     </tr>
+    <tr><td><button class="btn btn-light" (click)="standardTunning()">back to standard tunning</button></td></tr>
     </tbody>
     </table>
     </form>
