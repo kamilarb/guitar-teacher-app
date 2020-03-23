@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { NotesService } from '../notes.service';
 
 @Component({
@@ -6,9 +6,11 @@ import { NotesService } from '../notes.service';
   templateUrl: './guitar.component.html',
   styleUrls: ['./guitar.component.css']
 })
-export class GuitarComponent implements OnInit {
 
-  notes = this.data.notes;
+ export class GuitarComponent implements OnInit {
+  @ViewChildren('box') boxes !: QueryList<'box'>;
+
+ notes = this.data.notes;
 
   tunning = {
     1: "E",
@@ -62,27 +64,30 @@ export class GuitarComponent implements OnInit {
       box.style.backgroundColor = this.data.colors.picked;
     } else if (box.style.backgroundColor != this.data.colors.picked) {
       box.style.backgroundColor = this.data.colors.picked;
-    } else if(box.style.backgroundColor == this.data.colors.picked){
+    } else if (box.style.backgroundColor == this.data.colors.picked) {
       box.style.backgroundColor = "";
     } else {
       box.style.backgroundColor = "";
     }
   }
-  @ViewChildren('box') boxes !: QueryList<"box">;
- 
-
-  clearSelection(){
+  clearSelection = function() {
     // removes selection from boxes/notes on fret
 
-    this.boxes.forEach(el => el.nativeElement.style.backgroundColor = "")
-
+   this.boxes.forEach(el => el.nativeElement.style.backgroundColor = "");
   }
-
+  
   constructor(private data: NotesService) {
+     
   }
 
   ngOnInit(): void {
     this.changeTunning()
   }
 
+  ngAfterViewInit() {
+  
+
+  }
+
 }
+
