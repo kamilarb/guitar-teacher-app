@@ -23,40 +23,41 @@
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select>
         </th>
-        <td *ngFor="let note of strings[1]" #box (click)="pickNote(box)"><p  [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
+        <td *ngFor="let note of strings[1]" #box (click)="pickNote(box)"><p class="m-0" [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
       </tr>
       <tr>
         <th scope="row"> 2 - <select id="1" class="mr-2" name="2" [(ngModel)]="tunning[2]">
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select> </th>
-        <td *ngFor="let note of strings[2]" #box (click)="pickNote(box)"><p [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
+        <td *ngFor="let note of strings[2]" #box (click)="pickNote(box)"><p class="m-0" [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
       </tr>
       <tr>
         <th scope="row"> 3 - <select id="1" class="mr-2" name="3" [(ngModel)]="tunning[3]">
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select> </th>
-        <td *ngFor="let note of strings[3]" #box (click)="pickNote(box)"><p [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
+        <td *ngFor="let note of strings[3]" #box (click)="pickNote(box)"><p class="m-0" [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
       </tr>
       <tr>
         <th scope="row"> 4 - <select id="1" class="mr-2" name="4" [(ngModel)]="tunning[4]">
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select> </th>
-        <td *ngFor="let note of strings[4]" #box (click)="pickNote(box)"><p [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
+        <td *ngFor="let note of strings[4]" #box (click)="pickNote(box)"><p class="m-0" [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
       </tr>
       <tr>
         <th scope="row"> 5 - <select id="1" class="mr-2" name="5" [(ngModel)]="tunning[5]">
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select> </th>
-        <td *ngFor="let note of strings[5]" #box (click)="pickNote(box)"><p [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
+        <td *ngFor="let note of strings[5]" #box (click)="pickNote(box)"><p class="m-0" [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
       </tr>
       <tr>
         <th scope="row"> 6 - <select id="1" class="mr-2" name="6" [(ngModel)]="tunning[6]">
             <option *ngFor="let note of notes" [value]="note">{{note}} </option>
           </select> </th>
-        <td *ngFor="let note of strings[6]" #box (click)="pickNote(box)"><p [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
+        <td *ngFor="let note of strings[6]" #box (click)="pickNote(box)"><p class="m-0" [ngClass]="checkNote(note) ? 'font-weight-bold' : '' " > {{note}}</p></td>
       </tr>
       <tr>
         <th scope="row"><button class="btn btn-outline-primary" type="submit"> change tunning </button> </th>
+        <td colspan="12"><button class="btn btn-outline-primary" (click)="clearSelection()">clear all selection</button></td>
       </tr>
       <tr>
         <th scope="row"><button class="btn btn-outline-primary" (click)="standardTunning()">back to standard

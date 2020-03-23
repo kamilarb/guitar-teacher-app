@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { NotesService } from '../notes.service';
 
 @Component({
@@ -67,6 +67,15 @@ export class GuitarComponent implements OnInit {
     } else {
       box.style.backgroundColor = "";
     }
+  }
+  @ViewChildren('box') boxes !: QueryList<"box">;
+ 
+
+  clearSelection(){
+    // removes selection from boxes/notes on fret
+
+    this.boxes.forEach(el => el.nativeElement.style.backgroundColor = "")
+
   }
 
   constructor(private data: NotesService) {

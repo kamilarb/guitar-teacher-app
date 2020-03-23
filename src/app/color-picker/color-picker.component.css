@@ -3,8 +3,8 @@ div.colors {
 }
 
 div.color-box {
-    width: 30px;
-    height: 30px;
+    width: 4em;
+    height: 4em;
     display: inline-flex;
     margin: auto;
 }

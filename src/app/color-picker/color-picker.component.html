@@ -1,6 +1,6 @@
 
-<div class="mt-2 md-auto"><p><strong>Pick color to select notes on fret (just click on color-box)</strong></p></div>
+<div class="mt-2 md-auto"><p class="mx-auto"><strong>Pick color to select notes on fret (just click on color-box)</strong></p></div>
 
-<div class="colors">
+<div class="colors md-auto mt-2">
     <div class="color-box" *ngFor="let color of colors" [style.backgroundColor]="color" (click)="data.colors.picked=color"></div>
 </div>
