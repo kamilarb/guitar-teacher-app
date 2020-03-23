@@ -1,31 +1,27 @@
-<div class="row">
-  <div class="col">
-    <div class="form">
+
+    <div class="form mb-2">
       <form (ngSubmit)="changeScale()">
-        <label for="name">Pick your scale:</label>
-        <select id="name" class="mr-2" name="name" [(ngModel)]="pickedScale.name">
-          <option *ngFor="let name of notes" [value]="name">{{name}} </option>
+        <label for="name"><strong class="px-2">Pick your scale: </strong></label>
+        <select id="name" class="mr-2" name="name" [(ngModel)]="data.pickedScale.name">
+          <option *ngFor="let name of notes" [value]="name"> {{name}} </option>
         </select>
-        <select id="type" class="mr-2" name="type" [(ngModel)]="pickedScale.type">
-          <option value="maj">major</option>
-          <option value="min">minor</option>
+        <select id="type" class="mr-2" name="type" [(ngModel)]="data.pickedScale.type">
+          <option value="maj"> major </option>
+          <option value="min"> minor </option>
         </select>
-        <button class="btn btn-light" type="submit">Change</button>
+        <button class="btn btn-outline-primary" type="submit">Change</button>
   </form>
-</div></div></div>
-<div class="row">
-  <div class="col">
-     <p>Your scale - {{ pickedScale.name }} {{ pickedScale.type }}</p>
-    <table class="paleBlueRows">
-      <thead>
+</div>
+     <table class="table">
+      <thead class="thead-light">
         <tr>
-          <th>note</th>
-          <th *ngFor='let note of pickedScale.notes'>{{ note }}</th>
+          <th scope="col">note</th>
+          <th scope="col" *ngFor='let note of data.pickedScale.notes'>{{ note }}</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>position</td>
+          <th scope="row">position</th>
           <td>I</td>
           <td>II</td>
           <td>III</td>
@@ -37,5 +33,3 @@
         </tr>
       </tbody>
     </table>
-  </div>
-</div>

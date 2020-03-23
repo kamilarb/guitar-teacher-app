@@ -1,1 +1,6 @@
-<p>color-picker works!</p>
+
+<div class="mt-2 md-auto"><p><strong>Pick color to select notes on fret (just click on color-box)</strong></p></div>
+
+<div class="colors">
+    <div class="color-box" *ngFor="let color of colors" [style.backgroundColor]="color" (click)="data.colors.picked=color"></div>
+</div>

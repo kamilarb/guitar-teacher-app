@@ -8,15 +8,15 @@ import { NotesService } from '../notes.service';
 })
 export class GuitarComponent implements OnInit {
 
-notes = this.data.notes;
+  notes = this.data.notes;
 
   tunning = {
-      1: "E",
-      2: "B",
-      3: "G",
-      4: "D",
-      5: "A",
-      6: "E"
+    1: "E",
+    2: "B",
+    3: "G",
+    4: "D",
+    5: "A",
+    6: "E"
   };
 
   strings = {
@@ -28,14 +28,10 @@ notes = this.data.notes;
     6: []
   }
 
-  changeTunning(){
-
+  changeTunning() {
     for (let string in this.tunning) {
-
       let index = this.data.doubleNotes.indexOf(this.tunning[string]);
-
-      this.strings[string] = this.data.doubleNotes.slice(index+1, index+13);
-
+      this.strings[string] = this.data.doubleNotes.slice(index + 1, index + 13);
     }
   }
 
@@ -47,14 +43,37 @@ notes = this.data.notes;
       4: "D",
       5: "A",
       6: "E"
-  };
+    };
   }
 
-  constructor(private data:NotesService) {
+  checkNote(note) {
+    // check if note on fret belongs to pickedScale
+    if (this.data.pickedScale.notes.indexOf(note) != -1) {
+      return true
+    } else {
+      return false
     }
+  }
+
+  pickNote(box) {
+    // color selected/clicked boxes/notes on fret
+
+    if (!box.style.backgroundColor) {
+      box.style.backgroundColor = this.data.colors.picked;
+    } else if (box.style.backgroundColor != this.data.colors.picked) {
+      box.style.backgroundColor = this.data.colors.picked;
+    } else if(box.style.backgroundColor == this.data.colors.picked){
+      box.style.backgroundColor = "";
+    } else {
+      box.style.backgroundColor = "";
+    }
+  }
+
+  constructor(private data: NotesService) {
+  }
 
   ngOnInit(): void {
-    this.changeTunning() 
+    this.changeTunning()
   }
 
 }

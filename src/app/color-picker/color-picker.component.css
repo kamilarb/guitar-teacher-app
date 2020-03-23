@@ -1,0 +1,10 @@
+div.colors {
+    display: flex;
+}
+
+div.color-box {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    margin: auto;
+}
