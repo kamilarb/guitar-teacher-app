@@ -33,7 +33,7 @@ import { NotesService } from '../notes.service';
   changeTunning() {
     for (let string in this.tunning) {
       let index = this.data.doubleNotes.indexOf(this.tunning[string]);
-      this.strings[string] = this.data.doubleNotes.slice(index + 1, index + 13);
+      this.strings[string] = this.data.doubleNotes.slice(index, index + 18);
     }
   }
 
@@ -85,9 +85,7 @@ import { NotesService } from '../notes.service';
   }
 
   ngAfterViewInit() {
-  
-
-  }
+    }
 
 }
 

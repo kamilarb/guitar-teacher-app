@@ -1,4 +1,13 @@
 
-  table.guitar td:nth-child(2), td:nth-child(6), td:nth-child(8), td:nth-child(10), td:last-child  {
-   border-left: 2px solid rgb(171, 198, 248);
+table.guitar th, table.guitar td{
+  padding: 0.7rem 0.4rem;
+  vertical-align: middle;
+}
+
+  table.guitar td:nth-child(3), td:nth-child(7), td:nth-child(9), td:nth-child(11), td:nth-child(14),td:last-child  {
+   border-left: 2px solid rgb(182, 206, 250);
+  }
+
+  table.guitar tr:nth-child(2) td {
+    border-bottom: 1px solid rgb(239, 65, 67);
   }
